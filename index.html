@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Social Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <span class="logo">✦ SocialApp</span>
+  <button class="dark-btn" onclick="toggleDarkMode()">🌙</button>
+</div>
+
+<div class="container">
+
+  <!-- Profile Card -->
+  <div class="profile card">
+    <img src="https://i.pravatar.cc/150?img=32" alt="Profile">
+    <div class="profile-info">
+      <h2>Bhavna Saini</h2>
+      <p class="bio">Designer · Creator · Explorer 🌿</p>
+      <div class="stats">
+        <div class="stat">
+          <span id="postsCount">0</span>
+          <label>Posts</label>
+        </div>
+        <div class="stat">
+          <span id="followers">120</span>
+          <label>Followers</label>
+        </div>
+        <div class="stat">
+          <span>84</span>
+          <label>Following</label>
+        </div>
+      </div>
+      <button class="follow-btn" id="followBtn" onclick="followUser()">Follow</button>
+    </div>
+  </div>
+
+  <!-- Create Post -->
+  <div class="create-post card">
+    <h3>Create Post</h3>
+    <textarea id="postText" placeholder="What's on your mind, Bhavna?"></textarea>
+    <div class="post-actions-bar">
+      <label class="img-label" for="imageUpload">🖼 Add Image</label>
+      <input type="file" id="imageUpload" accept="image/*" style="display:none" onchange="previewImage(event)">
+      <button class="post-btn" onclick="createPost()">Post ✦</button>
+    </div>
+    <img id="imagePreview" src="" alt="" style="display:none; width:100%; border-radius:10px; margin-top:10px; max-height:200px; object-fit:cover;">
+  </div>
+
+  <!-- Posts Feed -->
+  <div id="posts"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
